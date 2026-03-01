@@ -1,4 +1,4 @@
-# 🤖 CodeReview AI — Fine-tuned DeepSeek-Coder
+#  CodeReview AI — Fine-tuned DeepSeek-Coder
 
 A real-time AI code reviewer powered by **DeepSeek-Coder-6.7B** fine-tuned on GitHub PR reviews.  
 Streams review feedback token-by-token via WebSockets with a Monaco-style React UI.
@@ -20,7 +20,7 @@ code-review-ai/
 
 ---
 
-## 🗂️ Step 1: Build Dataset
+##  Step 1: Build Dataset
 
 ```bash
 cd training/
@@ -34,7 +34,7 @@ python build_dataset.py --output data/code_review_dataset.jsonl --limit 50000
 
 Dataset format (JSONL):
 ```json
-{"language": "python", "input": "def login()...", "output": "🚨 Critical — SQL Injection..."}
+{"language": "python", "input": "def login()...", "output": " Critical — SQL Injection..."}
 ```
 
 Supplement with Microsoft's CodeReviewer dataset:
@@ -43,7 +43,7 @@ Supplement with Microsoft's CodeReviewer dataset:
 
 ---
 
-## 🏋️ Step 2: Fine-tune
+## Step 2: Fine-tune
 
 **Recommended GPU:** A100 40GB (~$2-3/hr on Vast.ai or RunPod)
 
@@ -76,7 +76,7 @@ python train.py --mode test --model_path ./deepseek-coder-review
 
 ---
 
-## 🚀 Step 3: Run the Backend
+##  Step 3: Run the Backend
 
 ```bash
 cd backend/
@@ -96,7 +96,7 @@ API endpoints:
 
 ---
 
-## 🎨 Step 4: Run the Frontend
+##  Step 4: Run the Frontend
 
 The frontend is a React app. Create a new Vite project and drop in `App.jsx`:
 
@@ -114,7 +114,7 @@ WebSocket connects to `ws://localhost:8000/ws/review`.
 
 ---
 
-## 💬 WebSocket Protocol
+## WebSocket Protocol
 
 **Client → Server:**
 ```json
@@ -135,7 +135,7 @@ __DONE__
 
 ---
 
-## 🔧 Environment Variables
+## Environment Variables
 
 | Variable | Default | Description |
 |----------|---------|-------------|
@@ -146,7 +146,7 @@ __DONE__
 
 ---
 
-## 📈 Roadmap
+## Roadmap
 
 - [ ] VS Code extension (Language Server Protocol)
 - [ ] GitHub PR webhook integration
@@ -157,7 +157,7 @@ __DONE__
 
 ---
 
-## 🧰 Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
